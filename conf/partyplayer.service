@@ -1,0 +1,14 @@
+[Unit]
+Description=Party player
+After=network-online.target
+RequiresMountsFor=/nfs/geluid
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/github/partyplayer/build
+ExecStart=/home/pi/github/partyplayer/build/src/partyplayer
+StandardOutput=append:/home/pi/github/partyplayer/log/stdout.txt
+
+[Install]
+WantedBy=multi-user.target
